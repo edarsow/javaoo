@@ -6,6 +6,9 @@
 package collections;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -14,11 +17,19 @@ import java.util.HashMap;
 public class MapPrac {
     
     public static void main(String[] args) {
-        HashMap<String, String> firstMap = new HashMap<>();
+        Map<String, String> firstMap = new HashMap<>();
         firstMap.put("keya", "valuea");
         firstMap.put("keyb", "valueb");
-        System.out.println(firstMap.get("keya"));
-        System.out.println(firstMap.get("keyb"));
+//        System.out.println(firstMap.get("keya"));
+//        System.out.println(firstMap.get("keyb"));
+        
+        Set myKeys = firstMap.keySet();
+        Iterator it = myKeys.iterator();
+        
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+            
     }
     
 }
