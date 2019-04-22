@@ -14,10 +14,7 @@ import java.util.Scanner;
  */
 public class SortClient {
     
-    
-    
     public static void main(String args[]){
-        
         runSystem();
     }
     
@@ -31,6 +28,7 @@ public class SortClient {
         
         int[] sort1 = sort.sortMeth(arr1);
         int[] sort2 = sort.sort2Meth(arr2);
+        System.out.println("...sorting... (change by ecd)");
         
         System.out.println("Bubble Sort: ");
         //printArray(sort1);
