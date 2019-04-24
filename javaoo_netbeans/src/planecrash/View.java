@@ -35,6 +35,11 @@ public class View {
         double safeSize = cont.getSafeList().size();
         double failureSize = cont.getFailureList().size();
         double ratio = safeSize/failureSize;
+        int[] a = {1,2,3};
+        int[] b = {4,5,6};
+        if(true){
+            
+        }
         
         System.out.println("*************");
         System.out.println("Safe list:");

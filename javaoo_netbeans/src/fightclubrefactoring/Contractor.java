@@ -11,10 +11,7 @@ import java.util.List;
  *
  * @author delores
  */
-public class Contractor {
-    public String fname;
-    public String lname;
-    public String phoneNum;
+public class Contractor extends Person {
     
     public boolean availableForAdditionalContracts;
     

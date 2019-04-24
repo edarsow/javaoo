@@ -9,10 +9,8 @@ package fightclubrefactoring;
  *
  * @author delores
  */
-public class Auditor {
-    public String fname;
-    public String lname;
-    public String phoneNum;
+public class Auditor extends Person {
+   
     
     public String certificationTitle;
     public java.time.LocalDateTime cetificationExpiryDate;
