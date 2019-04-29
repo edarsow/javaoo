@@ -12,6 +12,7 @@ package systemmodel_enums;
 public class WashingMachine {
     private Mode machineMode;
     private CycleStage stage;
+    private int detergentLevel;
     
     public WashingMachine(){
         machineMode = Mode.NORMAL;
@@ -19,6 +20,14 @@ public class WashingMachine {
     
     public Mode getMode(){
         return machineMode;
+    }
+    
+    public void setDegtergentLevel(int d){
+        detergentLevel = d;
+    }
+    
+    public int getDetergentLevel(){
+        return detergentLevel;
     }
     
     public CycleStage getStage(){
@@ -43,8 +52,18 @@ public class WashingMachine {
      * Strings to depict different washing intensities.
      * @return number of minutes the cycle takes at current 
      * machine mode
+     * @throws systemmodel_enums.ModeException in the event
+     * the user attempts to start wash cycle without
+     * any detergent
      */
-    public int beginWashCycle(){
+    public int beginWashCycle() throws ModeException{
+        if(detergentLevel <= 50 && detergentLevel >= 20){
+            throw new ModeException("Low detergent!", ExceptionSeverity.LOW);
+        } else if (detergentLevel < 20) {
+            throw new ModeException("No detergent!", ExceptionSeverity.MODERATE);
+            
+        }
+        
         switch(machineMode){
             case NORMAL:
                 System.out.println("Swish swish");

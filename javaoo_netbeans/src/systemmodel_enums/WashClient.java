@@ -12,15 +12,20 @@ package systemmodel_enums;
 public class WashClient {
     
     public static void main(String[] args) {
+        
         WashingMachine wm = new WashingMachine();
-        System.out.println(wm.beginWashCycle());
+        wm.setDegtergentLevel(33);
         
-        wm.setMode(Mode.DELICATES);
-        
-        // extract enum constant attributes
-        wm.getStage().getStageOrder();
-
-        System.out.println(wm.beginWashCycle());
+        try{
+            System.out.println(wm.beginWashCycle());
+            wm.setMode(Mode.DELICATES);
+            // extract enum constant attributes
+    //        wm.getStage().getStageOrder();
+            System.out.println(wm.beginWashCycle());
+        } catch (ModeException me){
+            System.out.println(me.getMessage());
+            System.out.println("Severity: " + me.severity.name());
+        }
     }
     
 }
