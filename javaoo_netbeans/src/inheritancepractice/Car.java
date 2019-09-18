@@ -19,6 +19,13 @@ public class Car extends Vehicle {
       
   }
   
+  @Override
+  public void turn(int deg){
+      // placeholder implementation which just
+      // adds incoming degrees to current heading
+      headingInDeg = headingInDeg + deg;
+  }
+  
   // full args constructor
   public Car(int numDoors, int ms, int year, String ftype){
       super(ms, year, ftype);

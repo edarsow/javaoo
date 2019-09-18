@@ -9,11 +9,12 @@ package inheritancepractice;
  *
  * @author delores
  */
-public class Vehicle {
+public abstract class Vehicle implements Turnable {
   int speed;
   int max_speed;
   int yearOfOrigin;
   String fuelType;
+  double headingInDeg;
   
   // no argument constructor
   public Vehicle(){
