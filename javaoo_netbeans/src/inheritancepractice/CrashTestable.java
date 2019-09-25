@@ -43,6 +43,7 @@ public interface CrashTestable {
     /**
      * possible return values include: steel, aluminum,
      * carbon fiber, cool corvette stuff.
+     * This is yucky.
      * @return material
      */
     public String frameMaterialIdentifer();

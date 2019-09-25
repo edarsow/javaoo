@@ -9,7 +9,7 @@ package inheritancepractice;
  *
  * @author delores
  */
-public abstract class Vehicle implements Turnable {
+public abstract class Vehicle implements Turnable, CrashTestable {
   int speed;
   int max_speed;
   int yearOfOrigin;
