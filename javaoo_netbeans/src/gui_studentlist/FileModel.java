@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package gui_studentlist;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -51,7 +51,7 @@ public class FileModel {
         
         try {
             fileScanner = new Scanner(new File(fname));
-        fileScanner.useDelimiter("\n");
+            fileScanner.useDelimiter("\n");
 //        System.out.println("Delim: " + fileScanner.delimiter());
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
