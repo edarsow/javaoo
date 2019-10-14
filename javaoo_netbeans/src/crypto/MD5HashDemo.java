@@ -7,8 +7,6 @@ package crypto;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -17,8 +15,7 @@ import javax.xml.bind.DatatypeConverter;
  */
 public class MD5HashDemo {
     
-    private static final String importantMessage = "Acceleratuon is nine point eight "
-            + "meters NOT SECOND per second on earth";
+    private static final String importantMessage = "Um. learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVAUm, learn your JAVA!";
     
     /**
      * Demo method for computing an MD5 hash value of an incoming String
@@ -28,9 +25,20 @@ public class MD5HashDemo {
         System.out.print("INPUT: ");
         System.out.println(importantMessage);
         try {
-            MessageDigest digester = MessageDigest.getInstance("SHA-256");
+            // Create an instance of a hashing machine
+            MessageDigest digester = MessageDigest.getInstance("MD5");
+            
+            // call update() as many times as we need to store
+            // all the data we want to hash. We must pass in the input
+            // as an array of bytes, not a String
             digester.update(importantMessage.getBytes());
+            
+            // Finally, call digest() to get the hashed value
+            // and we immediately pass output to 
+            // a fancy adapter class called DatatypeConverter
+            // which turns raw bytes into Unicode String
             String h = DatatypeConverter.printHexBinary(digester.digest());
+            // Output hashed value to user.
             System.out.println("hashed value: " + h);
         } catch (NoSuchAlgorithmException ex) {
             System.out.println(ex);
