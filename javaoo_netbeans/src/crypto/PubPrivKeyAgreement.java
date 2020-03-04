@@ -67,7 +67,7 @@ public class PubPrivKeyAgreement {
             KeyPair sylviaPair = sylviaKeyPairGen.generateKeyPair();
             
             System.out.println("Sylvia: Initilization");
-            sylviaKeyAgreement = KeyAgreement.geItnstance("DH");
+            sylviaKeyAgreement = KeyAgreement.getInstance("DH");
             sylviaKeyAgreement.init(sylviaPair.getPrivate());
             
             sylviaPublicKeyEncoded = sylviaPair.getPublic().getEncoded();
