@@ -27,9 +27,9 @@ public class FedExPlaneModel {
      * Generator method for our composite business objects of 
      * CargoPlane. Outputted CargoPlane objects have lists of
      * initialized Parcel objects and CrewMember objects
-     * @param crewSize
-     * @param parcelNum
-     * @return 
+     * @param crewSize number of CrewMember obs to creeate
+     * @param parcelNum number of Parcels to create
+     * @return an assembled CargoPlane
      */
     public CargoPlane generateCargoPlane(int crewSize, int parcelNum){
         // instantiate a business object!
@@ -41,6 +41,15 @@ public class FedExPlaneModel {
         return plane;
     }
     
+    
+    /**
+     * Generates a list of the inputted size and 
+     * computes a random age for each crew member
+     * based on the final member variables providing 
+     * upper and lower bounds
+     * @param crewSize number of crew to create
+     * @return
+     */
     private List<CrewMember> generateCrewMembers(int crewSize){
         List<CrewMember> crewList = new ArrayList<>();
         Random rand = new Random();
