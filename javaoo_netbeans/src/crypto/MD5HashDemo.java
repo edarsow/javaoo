@@ -7,7 +7,7 @@ package crypto;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import javax.xml.bind.DatatypeConverter;
+//import javax.xml.bind.DatatypeConverter;
 
 /**
  *
@@ -37,9 +37,9 @@ public class MD5HashDemo {
             // and we immediately pass output to 
             // a fancy adapter class called DatatypeConverter
             // which turns raw bytes into Unicode String
-            String h = DatatypeConverter.printHexBinary(digester.digest());
+//            String h = DatatypeConverter.printHexBinary(digester.digest());
             // Output hashed value to user.
-            System.out.println("hashed value: " + h);
+//            System.out.println("hashed value: " + h);
         } catch (NoSuchAlgorithmException ex) {
             System.out.println(ex);
         }
