@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package arrays;
+import java.util.Scanner;
 
 /**
  * Client class for an array of Collected Items
@@ -21,8 +22,10 @@ public class CollectionLand {
         // Turn off method to use user input
 //        loadSampleCollectionData();
 
-        startUserInputtedCollection();
+        // Turned off to demo switch
+//        startUserInputtedCollection();
         
+        menuWithSwitch();
         
     } // close main
     
@@ -77,6 +80,60 @@ public class CollectionLand {
         //     2: Enter items
         //     3: Display items
         //     4: Remove, reorder, rename items?
+        
+    } // close startUserCollection
+    
+    /**
+     * Demo of swtich statements powering menus for the user
+     */
+    public static void menuWithSwitch(){
+        
+        int menuSelection = 0;
+        // Create a new Scanner object wired to read from the keyboard
+        Scanner inputScanner = new Scanner(System.in);
+        
+        System.out.println("Select your favorite music genre from list and press enter");
+        System.out.println("1. Alternative");
+        System.out.println("2. Rock 'n Roll");
+        System.out.println("3. Folk/ Bluegrass");
+        System.out.println("4. Hip Hop");
+        System.out.println("5. Soul");
+        System.out.println("6. Top 40");
+        System.out.println("7. EDM");
+        
+        menuSelection = inputScanner.nextInt();
+        
+        
+        System.out.println("Chained ifs:");
+        if(menuSelection == 1){
+            System.out.println("You chose alternative");
+        } else if(menuSelection == 2){
+            System.out.println("You chose rock 'n roll");
+        } else if(menuSelection == 3){
+            System.out.println("You chose folk/bluegrass");
+        } else {
+            System.out.println("Not enough time to check the others, sorry!");
+        }
+        
+        System.out.println("Switch");
+        switch(menuSelection){
+            case 1:
+                System.out.println("You chose alternative");    
+                break;
+            case 2: 
+                System.out.println("You chose rock 'n roll");
+                break;
+            case 3:
+                System.out.println("You chose folk/bluegrass");
+                break;
+            default:
+                System.out.println("I don't know that type of music, sorry!");
+                
+        } // close switch
+        
+        
+        System.out.println("You selected: " + menuSelection);
+        
         
     }
     
