@@ -49,7 +49,6 @@ public class MultiDimensionalArrays {
         
         */
         
-        
         // Display values of the array
         // outer for loop iterates over the rows of our 6x3 array
         for(int row=0; row < electricalClips.length; row++){
