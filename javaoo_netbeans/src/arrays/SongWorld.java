@@ -11,6 +11,8 @@ import java.util.logging.Logger;
 
 /**
  * Client class of LyricMachine
+ * Practice commenting behavior
+ * Write code for humans and computers
  * @author Eric Darsow <edarsow@ccac.edu>
  */
 public class SongWorld {

@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
- * @author delores
+ * Program demonstrates use of Map Data Structures
+ * @author sp21 Eric CIT-130
  */
 public class MapPrac {
     
@@ -25,6 +25,7 @@ public class MapPrac {
         
         Set myKeys = firstMap.keySet();
         Iterator it = myKeys.iterator();
+        
         
         while(it.hasNext()){
             System.out.println(it.next());
