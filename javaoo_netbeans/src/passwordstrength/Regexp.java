@@ -31,7 +31,7 @@ public class Regexp {
         //                \\d stands for any digit class
         //                {3,8} means the preceding character must be repeated 
         //                      between 3 and 8 times
-        String regExp = ".*t{3,8}.*"; // Matches strings that contain somwhere in them
+        String regExp = ".*\\d{3,8}.*"; // Matches strings that contain somwhere in them
                                         // a sequence of digits between 3 and 8 digits long
         
         if(rawString.matches(regExp)){
