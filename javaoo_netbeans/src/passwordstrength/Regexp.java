@@ -66,7 +66,6 @@ public class Regexp {
         String regExp = "\\D.*\\d.*"; // CANNOT START with a digit but must contain
                                       // a digit somewhere in the rest of the passsword
         
-        // Principle 1: Without special regexp characters, a character matches itself
         if(rawString.matches(regExp)){
             System.out.println("Match! " + rawString + " is matched by the regexp: " + regExp);
         } else {
@@ -84,7 +83,6 @@ public class Regexp {
         //                \\s means any space character
         String regExp = ".*\\s.*"; // does the string have a space anywhere in it?
         
-        // Principle 1: Without special regexp characters, a character matches itself
         if(rawString.matches(regExp)){
             System.out.println("Match! " + rawString + " is matched by the regexp: " + regExp);
         } else {
