@@ -14,13 +14,31 @@ public class Regexp {
     
     public static void main(String[] whateva){
                 
+        System.out.println("yes\\\\no");
         // Uncomment methods to test its regular expression example
-        regexpRepeatCounts();
+//        regexpRepeatCounts();
         //      regexpDigit();
         //      regexpWeirdChar();
         //    regexpSpaces();
+//        regexpQuizReview();
         
     } // close main
+    
+    
+    public static void regexpQuizReview(){
+          // Write a regular expression that matches a String that is exactly any number 3 times 
+          // followed by a single letter and then the & character between 3 and 6 times
+        String rawString = "8%6h&&&&&&";
+    
+        String regExp = ""; 
+                                   
+        if(rawString.matches(regExp)){
+            System.out.println("Match! " + rawString + " is matched by the regexp: " + regExp);
+        } else {
+            System.out.println("No Match " + rawString + " does not match the regexp: " + regExp);
+        }
+    }
+      
     
     
     public static void regexpRepeatCounts(){
