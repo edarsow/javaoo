@@ -11,8 +11,14 @@ package passwordstrength;
  */
 public class PasswordClient {
     public static void main(String[] args) {
+        // Create an instance of our password checking machine
         StrengthChecker checker = new StrengthChecker();
-        char[] arr = {'@'};
-        System.out.println("Candidate passed? " + checker.checkForCandidateCharacter("r0mbo", arr));
+        String candidatePswd = "baseBa11isTooLongToBEAPassword";
+        
+        // fire up our checker machine, and store messages
+        String message = checker.verfiyCandidatePassword(candidatePswd);
+        System.out.println(message);
+        
+        
     }
 }

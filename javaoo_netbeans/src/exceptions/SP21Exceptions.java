@@ -16,18 +16,20 @@ public class SP21Exceptions {
     
     public static void main (String[] args){
         
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = null;
         
         System.out.println("Enter an integer and press enter:");
         int userIntInput = -9;
         
         // Keep looping as long as the input has not changed from -9
         while(userIntInput == -9){
+            scan = new Scanner(System.in);
+            
             // Scanner.nextInt() could throw an input mismatch exception
             // so we'll prepare for that event by surrounding it with try/catch
             // TODO: Why do we get an infinite loop without the nextLine() method on 
             // the scanner?
-            String stringIn = scan.nextLine();
+//            String stringIn = scan.nextLine();
             try{
                 userIntInput = scan.nextInt();
 
@@ -37,6 +39,7 @@ public class SP21Exceptions {
                 System.out.println("Error: cannot convert your input to an integer");
                 System.out.println("Exception Details: ");
                 System.out.println(ex.toString());
+//                scan.close();
             }
             
         }
