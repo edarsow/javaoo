@@ -5,6 +5,8 @@
  */
 package passwordstrength;
 
+import passwordstrength.studcode.cit130.PasswordStrengthChecker.StrengthChecker;
+
 /**
  * Client class for our Password Strength Checking machine
  * @author Eric Darsow <edarsow@ccac.edu>
