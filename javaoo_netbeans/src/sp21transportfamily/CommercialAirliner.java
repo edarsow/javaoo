@@ -13,7 +13,7 @@ import com.sun.org.apache.xalan.internal.xsltc.trax.TrAXFilter;
  * 
  * @author Eric Darsow <edarsow@ccac.edu>
  */
-public class CommercialAirliner extends TranportVehicle{
+public class CommercialAirliner extends TransportVehicle{
     
     final int ENGINE_CYCLE_CUTOFF = 34000;
     final int HOURS_CUTOFF = 34000;
