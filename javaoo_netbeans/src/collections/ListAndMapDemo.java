@@ -5,8 +5,11 @@
  */
 package collections;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.Scanner;
 /**
  * Demo of basic data Structures in Java: LinkedLists and HashMaps
  * @author Eric Darsow <edarsow@ccac.edu>
@@ -14,8 +17,13 @@ import java.util.ListIterator;
 public class ListAndMapDemo {
     
     public static void main(String[] args) {
-        
-        // Create an instance of the LinkedList class
+//        demoLists();
+            demoMapsAKADictionaries();
+       
+    } // close main
+    
+    public static void demoLists(){
+         // Create an instance of the LinkedList class
         // SEE docs https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html
         
         // We must declare what type of object can be stored in our
@@ -25,6 +33,8 @@ public class ListAndMapDemo {
         // Read more about generic programming in LIANG, that's the <>
         LinkedList<String> speedScenarios = new LinkedList<>();
         
+        // Smaller memory requirements
+        String[] scenarioArray = new String[5]; // declared/fixed sizes
         // In speed 1, first there's the Elevator hijack
         speedScenarios.add("Rigged elevator with bomb");
         // In speed 1, then the city bus is rigged with a speed trigger bomb
@@ -49,11 +59,39 @@ public class ListAndMapDemo {
             System.out.println("List item: " + item);
             
         } // close while
+    }
+    
+    
+    /**
+     * Demo of storing Key/Value pairs in a Mapping
+     */
+    public static void demoMapsAKADictionaries(){
+        
+        // Creat an instance of HashMap, declaring a type
+        // for the Key and the Value
+        Map<String, String> englishDict = new HashMap<>();
+        
+        // once we have a map, use the put method to store data by key
+        englishDict.put("mendacious", "lying; untruthful");
+        englishDict.put("facetious", "playfully jocular; humorous");
+        englishDict.put("faublist", "a composer of fables");
+        
+        // Look up values by KEY only using the get() method on Map interface
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a word and press enter for the definition");
+        String userKey = scan.next();
+        String def = englishDict.get(userKey);
+        
+        System.out.println("The definition of " + userKey + " is " + def);
+        // TODO is create a dictionary model whose key:value pairs 
+        // represent another set of data
+        // i.e. list of favorites wiht these keys
+        // key: fav restaurant
+        // Key: fav author
         
         
-        
-        
-        
-    } // close main
+    }
+    
+    
     
 } // close class

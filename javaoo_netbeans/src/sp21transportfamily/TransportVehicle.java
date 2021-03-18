@@ -9,11 +9,14 @@ package sp21transportfamily;
  * Superclass representing a mode of transportation
  * for carrying passengers
  * 
- * 
+ * Abstract modifier may make sense in this class
+ * since all uses of a Transport vehicle rely on instnantiating
+ * a specific subtype
  * 
  * @author Eric Darsow <edarsow@ccac.edu>
  */
-public class TransportVehicle {
+public  class TransportVehicle {
+    private String callSign;
     private int passengerCount;
     private double averageSpeed;
     private double costPerPassengerMile;
@@ -138,6 +141,20 @@ public class TransportVehicle {
      */
     public void setCurrentFuelLevel(double currentFuelLevel) {
         this.currentFuelLevel = currentFuelLevel;
+    }
+
+    /**
+     * @return the callSign
+     */
+    public String getCallSign() {
+        return callSign;
+    }
+
+    /**
+     * @param callSign the callSign to set
+     */
+    public void setCallSign(String callSign) {
+        this.callSign = callSign;
     }
     
     

@@ -5,6 +5,10 @@
  */
 package sp21transportfamily;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Program  to model transportation safety
  * across several modes of travel:
@@ -43,6 +47,8 @@ public class TransportSafetySimulator {
         CommercialAirliner southjet227 = new CommercialAirliner();
         southjet227.setAverageSpeed(380);
         southjet227.setAltitute(28560);
+        southjet227.setCallSign("Southjet 227");
+        southjet227.setPassengerCount(102);
         
         // call computeTravelTime with an instance of CommercialAirliner
         double timePGHToAtlanta = computeTravelTime(southjet227, 526);
@@ -54,6 +60,8 @@ public class TransportSafetySimulator {
         // calling a setter method on the superclass (TransportVehicle)
         amtrak1.setAverageSpeed(20.0);
         amtrak1.setGrossWeight(2500000);
+        amtrak1.setCallSign("MegaTrainDelta");
+        amtrak1.setPassengerCount(210);
         
         attemptDerailment(amtrak1);
         
@@ -63,14 +71,67 @@ public class TransportSafetySimulator {
         // test our subclasses of Automobile
         RaceCar ferrari250GTCoupe = new RaceCar();
         ferrari250GTCoupe.setAverageSpeed(142.9);
+        ferrari250GTCoupe.setCallSign("Ferrari250");
+        ferrari250GTCoupe.setPassengerCount(2);
         double raceCarTime = computeTravelTime(ferrari250GTCoupe, 808);
+        
         
         ferrari250GTCoupe.setWheelBaseInches(60.3);
         System.out.println("Travel time in race car from PGH to Rochster, MN: " + raceCarTime);   
         
+        // ************* STORE OUR OBJECTS IN A LIST<> *******************
+        // vehicleList is typed as List and can hold objects of type TransportVehicle
+        // but more importantly, it can also hold ANY subtype. 
+        // DESIGN PRINCIPLE: CODE TO SUPERCLASS WHEN POSSIBLE
+        // vehicleList is typed to the List interface, and I store inside it
+        // a concrete implemenation of List called LinkedLiset
+        List<TransportVehicle> vehicleList = new LinkedList<>();
         
+        //  load up our custom objects into our list
+        // ANY SUBCLASS can be added to a list typed to hold 
+        // the parent
+        vehicleList.add(amtrak1);
+        vehicleList.add(southjet227);
+        vehicleList.add(ferrari250GTCoupe);
         
+        // send list down to our passenger tabulator and print returned result
+        int pTotal = computeTotalPassengerCount(vehicleList);
+        System.out.println("Total Passengers: " + pTotal);
+        
+        // A more specific storage container, that could be used
+        // to queue vehicles for road transport
+//        List<Automobile> autoList = new ArrayList<>();
+//        autoList.add(ferrari250GTCoupe);
+    } 
+    
+    
+    /**
+     * Tabulates total passenger count of each Object in our list
+     * @param vList preferably with a non-zero pasenger count. If you
+     * give me null, I return zero passegers
+     * @return total passengers in all passed in TransportVehicles
+     */
+    public static int computeTotalPassengerCount(List<TransportVehicle> vList){
+        
+        int passTotal = 0;
+        // Only examine elements if we actually have a list and that list
+        // is NOT empty (!)
+        if(vList != null && !vList.isEmpty()){
+            // Use Enhanced for Loop to visit each item individually
+            // This says, serve me once TransportVehicle at a time, 
+            // and do so by sticking it in the variable called v
+            // which I can look at more closely inside the for loop
+            for(TransportVehicle v: vList){
+                System.out.println("***************************************");
+                System.out.println("Examining Vehicle: " + v.getCallSign());
+                System.out.println("Passenger Count: " + v.getPassengerCount());
+                passTotal = passTotal + v.getPassengerCount();
+            } // enhanced for loop
+        }
+        
+        return passTotal;
     }
+    
     
     /**
      * Method will check with any class that implements
