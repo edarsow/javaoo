@@ -15,10 +15,6 @@ public class ClassAttendee implements OverrideMe{
         
     }
     
-    @Override
-    public void participateInClass(String s){
-        
-    }
 
     @Override
     public void departInClass(String s) {
