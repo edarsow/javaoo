@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class TranportationSimulator implements TransportSimulatable {
 
+        
     private String simulationResults;
     
     
@@ -45,6 +46,8 @@ public class TranportationSimulator implements TransportSimulatable {
         simulationResults = sb.toString();
         
     }
+    
+ 
 
     @Override
     public String getSimulationResults() {
