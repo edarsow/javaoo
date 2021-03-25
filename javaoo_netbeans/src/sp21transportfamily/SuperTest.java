@@ -33,16 +33,16 @@ public class SuperTest {
         
         
         
-        
+        Circle cir2 = null;
         // demo of casting
         if(shape3 instanceof Circle){
-            Circle cir2 = (Circle) shape3;
+            cir2= (Circle) shape3;
             
         } else {
             System.out.println("SHAPE 3 NOT A CIRCLE");
         }
         
-        calculateCircleArea(cir);
+        calculateCircleArea(cir2);
     }
     
     private static void calculateCircleArea(Circle c){

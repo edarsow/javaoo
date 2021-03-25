@@ -11,14 +11,14 @@ import java.util.List;
  *
  * @author edith
  */
-public class TranportationSimulator implements TransportSimulatable {
+public class TransportationSimulator implements TransportSimulatable {
 
         
     private String simulationResults;
     
     
     // create a constructor
-    public TranportationSimulator(){
+    public TransportationSimulator(){
         simulationResults = null;
     }
     
@@ -35,19 +35,20 @@ public class TranportationSimulator implements TransportSimulatable {
             // and do so by sticking it in the variable called v
             // which I can look at more closely inside the for loop
             for(TransportVehicle v: vList){
-                sb.append("***************************************");
-                sb.append("Examining Vehicle: " + v.getCallSign());
-                sb.append("Passenger Count: " + v.getPassengerCount());
+                sb.append("***************************************\n");
+                sb.append("Examining Vehicle: " + v.getCallSign() + "\n");
+                sb.append("Passenger Count: " + v.getPassengerCount() + "\n");
                 passTotal = passTotal + v.getPassengerCount();
             } // enhanced for loop
+            sb.append("****** OVERALL RESULTS *******");
+            sb.append("Total Passengers in all vehicles: " + passTotal);
+            
         }
         // after we've run the simulatoin, dump our String train into 
         // the member variable which holds simulation results
         simulationResults = sb.toString();
         
     }
-    
- 
 
     @Override
     public String getSimulationResults() {

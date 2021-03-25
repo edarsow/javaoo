@@ -18,7 +18,7 @@ import static sp21transportfamily.TransportSafetySimulator.computeTravelTime;
 public class ModelSim {
     public static void main(String[] args) {
         
-        TranportationSimulator ts = new TranportationSimulator();
+        TransportationSimulator ts = new TransportationSimulator();
         
         // call setupVehicleList which returns a pretty set of 
         // subclasses with call signs and all that jazz
