@@ -25,5 +25,10 @@ public class ClassAttendee implements OverrideMe{
     public void flingRubberBandsInClass(String s) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void participateInClass(String s) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
