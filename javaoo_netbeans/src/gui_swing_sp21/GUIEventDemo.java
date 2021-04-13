@@ -8,9 +8,14 @@ package gui_swing_sp21;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.StrokeBorder;
 
@@ -53,7 +58,50 @@ public class GUIEventDemo extends JFrame{
         // a component in our JFrame (i.e. "a window")
         add(jlblMessage, BorderLayout.CENTER);
         
+        JPanel jpCheckBoxes = new JPanel();
+        // tell the JPanel how to organize the components we insert with .add()
+        jpCheckBoxes.setLayout(new GridLayout(1,2));
+        // add our subcomponents
+        jpCheckBoxes.add(jchkBold);
+        jpCheckBoxes.add(jchkItalic);
+        // add our whole mini-panel to our master frame
+        add(jpCheckBoxes, BorderLayout.EAST);
+        
+        // register listener with check boxes
+        jchkBold.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                // call our setFont() method
+                setNewFont();
+            }
+        });
+        
+        jchkItalic.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                // call our setFont() method
+                setNewFont();
+            }
+        });
+        
+        
+        
             
     } // close constructor
+    
+    private void setNewFont(){
+        System.out.println("Checking current check box settings and computing new value");
+        int fontStyle = Font.PLAIN;
+        // strange looking if/else on a single line
+        // computing an integer value to represent our desired font
+        fontStyle += (jchkBold.isSelected() ? Font.BOLD : Font.PLAIN);
+        fontStyle += (jchkItalic.isSelected() ? Font.ITALIC : Font.PLAIN);
+        
+        Font font = jlblMessage.getFont();
+        jlblMessage.setFont(new Font(font.getName(), fontStyle, font.getSize()));
+        jlblMessage.setText("My display has been changed!");
+        
+    } // close setNewFont
+        
     
 } // close class
